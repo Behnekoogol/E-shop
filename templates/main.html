@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Products</h1>
+    {% for product in products %}
+        <h2>{{ product.name }}</h2>
+        {% for image in product.images.all %}
+            <img  width="950px" height="400px"  src="{{ image.image.url }}" alt="{{ product.name }} image">
+        {% endfor %}
+        <p>{{ product.description }}</p>
+        <p>Price: {{ product.price }}</p>
+        <p>In stock: {% if product.in_stock %} Yes {% else %} No {% endif %}</p>
+        <!-- Add more details here -->
+    {% endfor %}
+</body>
+</html>
+
