@@ -16,12 +16,6 @@ class Category(models.Model):
 
 
 
-class Gender(models.Model):
-    gender = models.CharField(max_length=30, null=False, blank=False)
-
-    def __str__(self):
-        return self.gender
-
 
 
 
@@ -30,7 +24,6 @@ class Product(models.Model):
     slug = models.SlugField(verbose_name=_('slug'), allow_unicode = True, null=False)
     description = models.TextField(verbose_name=_("description"), null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="products")
-    gender = models.ForeignKey(Gender, on_delete=models.CASCADE, verbose_name=_('gender'), null=True, blank=True)
     price = models.PositiveIntegerField(verbose_name=_("price"))
     in_stock = models.BooleanField(verbose_name=_("in stock"), default=True)
     brand = models.CharField(max_length=100, null=True, blank=True)

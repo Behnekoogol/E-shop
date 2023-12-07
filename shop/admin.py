@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, ProductImage, Gender
+from .models import Category, Product, ProductImage
 
 
 
@@ -7,10 +7,6 @@ from .models import Category, Product, ProductImage, Gender
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'active')
 
-
-@admin.register(Gender)
-class GenderAdmin(admin.ModelAdmin):
-    list_display = ['gender']
 
 
 @admin.register(Product)
