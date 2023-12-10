@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'font-awesome.css' %}">
 
-    <link rel="stylesheet" href="{% static 'templatemo_main.css' %}">
+    <link rel="stylesheet" href="{% static 'templatemo-hexashop.css' %}">
 
     <link rel="stylesheet" href="{% static 'owl-carousel.css' %}">
 
@@ -58,10 +58,10 @@ https://templatemo.com/tm-571-hexashop
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Men's</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Women's</a></li>
-                            <li class="scroll-to-section"><a href="index.html">Kid's</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home' %}" class="active">Home</a></li>
+{#                               {% for item in product %}#}
+{#                            <li class="scroll-to-section"><a href="{% url 'products' category_id=item.category.id %}">{{ item.category }}</a></li>#}
+{#                            {% endfor %}#}
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
@@ -80,7 +80,7 @@ https://templatemo.com/tm-571-hexashop
                                     <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="index.html">Explore</a></li>
+
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
