@@ -9,17 +9,23 @@ def product_list(request):
     return render(request, 'index.html', {'products': products, 'category': category})
 
 
-class About:
-    pass
+def About(request):
+    return render(request, 'about.html')
 
 
-class Contact:
-    pass
+def Contact(request):
+    return render(request, 'contact.html')
 
 
 class Single(DetailView):
     template_name = 'single-product.html'
     model = Product
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        categor = Category.objects.all()
+        context['categor'] = categor
+        return context
 
 
 class Products(TemplateView):

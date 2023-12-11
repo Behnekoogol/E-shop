@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN/gWA5LcspzT5B1QvYYoKxY3HpFvME" crossorigin="anonymous">
     <title>Hexashop Ecommerce HTML CSS Template</title>
 
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'font-awesome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'font-awe.css' %}">
 
     <link rel="stylesheet" href="{% static 'templatemo-hexashop.css' %}">
 
@@ -166,7 +166,7 @@ https://templatemo.com/tm-571-hexashop
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>{{ cat.title }}</h2>
+                        <a href="{% url 'products' category_id=cat.id %}"><h2>{{ cat.title }}</h2></a>
                         <span>Details to details is what makes Hexashop different from the other themes.</span>
                     </div>
                 </div>
