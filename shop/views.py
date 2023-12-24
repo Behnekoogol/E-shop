@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product, Category
+from .models import Product, Category, Order
 from django.views.generic import TemplateView, DetailView, ListView
 
 
 def product_list(request):
     category = Category.objects.all()
     products = Product.objects.all()
-    return render(request, 'index.html', {'products': products, 'category': category})
+    new_product = Product.objects.all().order_by('-id')[:5]
+    return render(request, 'index.html', {'products': products, 'category': category, 'new_product': new_product})
 
 
 def About(request):
